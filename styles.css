@@ -342,34 +342,99 @@ section h2{
 
 .education{
     display: flex;
-    min-width: 25vw;
-    max-width: 25vw;
+    min-width: 50vw;
+    max-width: 50vw;
     justify-content: center;
     justify-items: center;
     padding: 10px 100px;
-    margin: 0 25vw;
+    margin: 0 10vw;
     flex-wrap: wrap;
 }
-.edu-info{
-    min-width:25vw;
-    min-height: 25vh;
-    padding-left: 20px;
+.edu-info-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 50vw;
+    max-width: 50vw;
+    height: max-content;
 }
 
-.edu-info:nth-child(odd){
-    margin-left: 25vw;
-    border-left: var(--foreground-color) 2px solid; 
-}
-.edu-info:nth-child(even){
-    margin-right: 25vw;
-    border-right: var(--foreground-color) 2px solid;
-    transform: translateX(-20px);
+.edu-info{
+    min-width: 50%;
+    max-width: 50%;
 }
 
 .edu-info h3{
     color: var(--primary-color);
+    font-size: 20px;
+
 }
 .edu-info h2{
+    color: var(--foreground-color);
+}
+.edu-info p{
     color: var(--secondary-color);
+    font-size: 16px;
+    line-height: .95em;
+    text-align: justify;
+    margin-top: 0;
+    padding-right: 20px;
 }
 
+.edu-infoShow{
+    animation: eduShowAnim both;
+    animation-timeline: view(40% 20%);
+}
+
+@keyframes eduShowAnim {
+    0%{
+        filter: blur(4px);
+        transform: translateY(40px) scale(.75);
+    }
+    30%{
+        filter: blur(0px);
+        transform: translateY(0px) scale(1);
+    }
+    70%{
+        filter: blur(0px);
+        transform: translateY(0px) scale(1);
+    }
+    100%{
+        filter: blur(4px);
+        transform: translateY(-40px) scale(.75);
+    }
+}
+
+.logo{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.bafa-logo{
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+}
+
+.edu-img{
+    min-width: 50%;
+    max-width: 50%;
+    height: 200px;
+    object-fit: contain;
+    padding: 0;
+}
+.edu-img:nth-child(odd){
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+
+}
+.edu-img:nth-child(even){
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+
+}
