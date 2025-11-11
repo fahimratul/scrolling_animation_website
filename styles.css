@@ -772,5 +772,137 @@ footer{
    filter: drop-shadow(0 0 20px var(--foreground-color)) drop-shadow(0 0 40px var(--foreground-color)) drop-shadow(0 0 60px var(--foreground-color));
 }
 
+/* Mobile / responsive styles (appended cleanly at end) */
+@media (max-width: 600px) {
+    :root{
+        --font-size-base: 16px;
+    }
 
+    body{
+        font-size: var(--font-size-base);
+        line-height: 1.4;
+    }
 
+    header{
+        padding: 10px;
+        height: auto;
+        align-items: center;
+    }
+
+    header h1{
+        font-size: 1.4em;
+    }
+
+    header .container{
+        display: none;
+    }
+
+    /* hide desktop nav for small screens (use a mobile nav/hamburger separately if desired) */
+    header nav{
+        font-size: .5em;
+    }
+
+    .main-img{
+        position: relative;
+        height: auto;
+        min-height: 50vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .main-img img{
+        width: 100vw;
+        height: 50vh;
+        object-fit: cover;
+        opacity: 1;
+    }
+    .blurout{
+        animation-range: exit 40%;
+    }
+    .main-img .img-title{
+        width: 100vw;
+        padding-left: 16px;
+        font-size: 1.1em;
+        transform: translateX(0);
+        bottom: 12px;
+        position: relative;
+    }
+
+    .img-title p{
+        font-size: 18px;
+        line-height: 1.4em;
+        white-space: normal;
+        overflow: visible;
+        border-right: none;
+        width: 100%;
+        height: auto;
+    }
+
+    .title{ font-size: 22px; }
+
+    section{ 
+        min-height: auto;
+        padding: 12px; 
+    }
+
+    .about{
+        flex-direction: column;
+        padding: 12px;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .about-img, .about-text-holder{
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .about-img img{ transform: translateY(0); height: auto; }
+
+    .about-text{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-column-gap: 0;
+        grid-row-gap: 12px;
+    }
+    .div1, .div2, .div3, .div4, .div5{
+        grid-area: auto;
+    }
+
+    .about-text p{ font-size: 15px; }
+
+    .education, .edu-info-holder, .edu-info{
+        min-width: auto;
+        max-width: 100%;
+        width: 100%;
+        padding: 8px 12px;
+        margin: 0;
+        flex-direction: column;
+    }
+
+    .conncet-ul{ gap: 22px; }
+    .conncet-ul li{ width: 64px; height: 64px; }
+    .conncet-ul li a i{ font-size: 1.8em; }
+
+    .connect-me{ font-size: 32px; }
+
+    footer{ padding: 24px; height: auto; }
+
+    /* reduce/disable hover effects which are not ideal on touch devices */
+    header nav ul li:hover,
+    header nav ul li:hover+li,
+    header nav ul li:has(+li:hover),
+    header nav ul li{
+        transform: none !important;
+    }
+
+    .conncet-ul li:before{ inset: 20px; }
+    .conncet-ul li:hover:before{ inset: 12px; }
+
+    /* small-screen friendly spacing for text blocks */
+    .about-text div h3{ font-size: 18px; }
+    .edu-info h3{ font-size: 18px; }
+    .edu-info p{ font-size: 15px; }
+}
