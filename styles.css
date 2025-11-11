@@ -587,7 +587,31 @@ section h2{
     border-bottom-right-radius: 3px;
     box-shadow: 2px 2px 0px 2px var(--foreground-color)
 }
+.card-info{
+    position: absolute;
+    bottom: 70px;
+    left: 10px;
+    right: 10px;
+    padding: 10px;
+    width: calc(100% - 20px);
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    font-size: 14px;
+    border-radius: 5px;
+    border: var(--foreground-color) 4px solid;
+    opacity: 0;
+    transform: scale(0) translateY(200%);
+    transition: all 0.6s ease-in-out;
+}
 
+.card:hover .card-info:nth-child(odd){
+    opacity: 1;
+    transform: scale(1) translateY(0) translateX(-328px);
+}
+.card:hover .card-info.right{
+    opacity: 1;
+    transform: scale(1) translateY(0) translateX(300px);
+}
 
 .radial-logo{
     width: 150px;
@@ -623,4 +647,130 @@ footer{
     padding: 20px;
     font-size: 14px;
     height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
+
+.conduct-me{
+    color: var(--secondary-color);
+    font-size: 16px;
+    line-height: 1.6em;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+.connect-me{
+    color: var(--foreground-color);
+    font-size: 48px;
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+    width: max-content;
+}
+.connect-me::after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 80px;
+    height: 50px;
+    background-color:#dfd0b86b;
+    top:0;
+    left:0;
+}
+
+.conncet-ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 50px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.conncet-ul li{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.6s;
+    cursor: pointer;
+}
+
+.conncet-ul li:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 30px;
+    box-shadow: 0 0 0 10px var(--foreground-color),
+               0 0 0 20px var(--background-color),
+               0 0 0 22px var(--foreground-color);
+    box-sizing: border-box;
+    transition: all 0.6s;
+}
+.conncet-ul li:hover:before{
+    inset: 15px;
+}
+.conncet-ul li:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--background-color);
+    transform: rotate(45deg); 
+    transition: all 0.6s;
+}
+.conncet-ul li:hover:after{
+    transform: rotate(0deg);
+}
+
+.conncet-ul li a{
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+.conncet-ul li a i{
+    font-size: 2.5em;
+    transition: all 0.6s;
+    opacity: 1;
+    color: var(--foreground-color);
+}
+.conncet-ul li:hover a i{
+    transform: translateY(-40%);
+}
+.conncet-ul li a span{
+    position: absolute;
+    font-family: sans-serif;
+    color: var(--foreground-color);
+    font-size: 16px;
+    opacity: 0;
+    transition: all 0.6s;
+    transform: scale(0) translateY(200%);
+}
+
+.conncet-ul li:hover a span{
+    opacity: 1;
+    transform: scale(1) translateY(100%);
+}
+
+.conncet-ul li:hover a i,
+.conncet-ul li a span {
+   filter: drop-shadow(0 0 20px var(--foreground-color)) drop-shadow(0 0 40px var(--foreground-color)) drop-shadow(0 0 60px var(--foreground-color));
+}
+
+
+
