@@ -897,7 +897,12 @@ footer{
     header nav ul li{
         transform: none !important;
     }
-
+    .card:hover .card-info:nth-child(odd){
+        transform: scale(1) translateY(0) translateX(0);
+    }
+    .card:hover .card-info.right{
+        transform: scale(1) translateY(0) translateX(0px);
+    }
     .conncet-ul li:before{ inset: 20px; }
     .conncet-ul li:hover:before{ inset: 12px; }
 
